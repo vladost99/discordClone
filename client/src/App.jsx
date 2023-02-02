@@ -1,15 +1,20 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import LoginPage from "pages/Login";
 import RegisterPage from "pages/Register";
 import Dashboard from "pages/Dashboard";
 import AlertNotifications from "components/AlertNotifications";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { store } from "redux/store";
+import { checkAuth } from "redux/user/thunk";
 
 //const Dashboard = React.lazy(() => import("pages/Dashboard"));
 
-
 function App() {
+  useEffect(() => {
+    store.dispatch(checkAuth());
+  }, []);
+
   return (
     <>
       <Routes>
