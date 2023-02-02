@@ -4,7 +4,7 @@ import authAPI from "api/auth";
 import { store } from "redux/store";
 import { setUser, removeUser } from "redux/user/slice";
 
-export const BASE_URL = "https://discord-test-express.herokuapp.com";
+export const BASE_URL = "https://discord-clone-a8p8l9wkf-vladost99.vercel.app";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
